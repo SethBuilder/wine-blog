@@ -5,6 +5,7 @@
     background-size: cover;
     background-position: center center;
     height: 100%;
+    width: 100%;
     text-decoration: none;
     margin: 0 auto;
     .image-text {
@@ -47,5 +48,13 @@
             padding: 4px 8px;
             margin-right: 5px;
         }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .masonry-post {
+        width: 100%;
+        margin: 10px 0;
+        height: 300px;
     }
 }

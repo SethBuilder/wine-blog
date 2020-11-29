@@ -2,7 +2,7 @@ import { wines } from "../assets/mocks/wines";
 import moment from "moment";
 
 // TODO: call api on the backend as the key will be exposed from devtools
-const blogUrl = `https://newsapi.org/v2/everything?apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
+const blogUrl = `https://newsapi.org/v2/everything?apiKey=${process.env.REACT_APP_NEWS_API_KEY}&sortBy=popularity`;
 const dateFormat = "YYYY-MM-DD";
 
 async function asyncForEach(array, callback) {
@@ -16,7 +16,7 @@ export const fetchPosts = async () => {
   try {
     await asyncForEach(wines, async (wine) => {
       const response = await fetch(
-        blogUrl + `&qInTitle=${wine.apiSearchTerm}&pageSize=2&sortBy=popularity`
+        blogUrl + `&qInTitle=${wine.apiSearchTerm}&sortBy=popularity`
       );
       const { articles } = await response.json();
 
@@ -25,7 +25,7 @@ export const fetchPosts = async () => {
           article.title.length > 30
             ? article.title.substring(0, 30) + "..."
             : article.title,
-        link: "#",
+        link: article.url,
         date: moment(article.publishedAt).format(dateFormat),
         categories: wine.categories,
         image: article.urlToImage,
@@ -34,6 +34,7 @@ export const fetchPosts = async () => {
       posts.push(wineTypeArticles);
     });
 
+    console.log("rrrrrrrraw popp", posts.flat());
     return posts.flat();
   } catch (err) {
     console.warn(err);

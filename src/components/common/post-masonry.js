@@ -8,7 +8,7 @@ export default function PostMasonry({ posts, columns, tagsOnTop }) {
       style={{ gridTemplateColumns: `repeat(${columns}, minmax(275px, 1fr))` }}
     >
       {posts.map((post, index) => (
-        <MasonryPost {...{ post, index, tagsOnTop, key: index }} />
+        <MasonryPost {...{ post, tagsOnTop, key: index }} />
       ))}
     </section>
   );

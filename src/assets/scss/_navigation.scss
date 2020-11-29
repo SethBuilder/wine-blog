@@ -63,6 +63,7 @@
             position: absolute;
             top: 65px;
             left: -300px;
+            z-index: 1000;
             transition: 300ms ease left;
             flex-direction: column-reverse;
             padding: 0;
