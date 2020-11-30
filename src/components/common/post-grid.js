@@ -15,11 +15,12 @@ export default function PostGrid({ posts }) {
   }, [current, pageSize, posts]);
 
   useEffect(() => {
-    window.scroll({
-      top: 500,
-      left: 0,
-      behavior: "smooth",
-    });
+    current !== 1 &&
+      window.scroll({
+        top: 500,
+        left: 0,
+        behavior: "smooth",
+      });
   }, [current, pageSize]);
 
   return (

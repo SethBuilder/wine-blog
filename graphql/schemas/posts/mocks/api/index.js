@@ -1,9 +1,7 @@
-import { wines } from "../assets/mocks/wines";
-import moment from "moment";
-
-// TODO: call api on the backend as the key will be exposed from devtools
-const blogUrl = `https://newsapi.org/v2/everything?apiKey=${process.env.REACT_APP_NEWS_API_KEY}&sortBy=popularity`;
-const dateFormat = "YYYY-MM-DD";
+const wines = require("../wines");
+const fs = require("fs");
+const fetch = require("node-fetch");
+const moment = require("moment");
 
 async function asyncForEach(array, callback) {
   for (let index = 0; index < array.length; index++) {
@@ -11,7 +9,9 @@ async function asyncForEach(array, callback) {
   }
 }
 
-export const fetchPosts = async () => {
+const fetchPosts = async () => {
+  const blogUrl = `https://newsapi.org/v2/everything?apiKey=${process.env.NEWS_API_KEY}`;
+  const dateFormat = "YYYY-MM-DD";
   const posts = [];
   try {
     await asyncForEach(wines, async (wine) => {
@@ -19,13 +19,10 @@ export const fetchPosts = async () => {
         blogUrl + `&qInTitle=${wine.apiSearchTerm}&sortBy=popularity`
       );
       const { articles } = await response.json();
-
       const wineTypeArticles = articles.map((article) => ({
-        title:
-          article.title.length > 30
-            ? article.title.substring(0, 30) + "..."
-            : article.title,
+        title: article.title,
         link: article.url,
+        author: article.author,
         date: moment(article.publishedAt).format(dateFormat),
         categories: wine.categories,
         image: article.urlToImage,
@@ -33,10 +30,21 @@ export const fetchPosts = async () => {
 
       posts.push(wineTypeArticles);
     });
+    fs.appendFile(
+      "schemas/posts/mocks/api-response.js",
+      JSON.stringify(posts.flat()),
+      function (err) {
+        if (err) throw err;
+        console.log("Saved mock data!");
+      }
+    );
 
-    console.log("rrrrrrrraw popp", posts.flat());
     return posts.flat();
   } catch (err) {
     console.warn(err);
   }
+};
+
+module.exports = {
+  fetchPosts,
 };

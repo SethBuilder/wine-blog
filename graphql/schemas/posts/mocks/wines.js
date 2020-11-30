@@ -10,4 +10,4 @@ const wines = [
     categories: ["Sparkling Wine", "Citrus Taste"],
   },
 ];
-export { wines };
+module.exports = wines;
