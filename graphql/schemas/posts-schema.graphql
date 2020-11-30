@@ -12,4 +12,5 @@ type Post {
   author: String
   description: String
   image: String
+  link: String
 }

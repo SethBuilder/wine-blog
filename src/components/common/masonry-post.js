@@ -8,7 +8,12 @@ export default function MasonryPost({ post, tagsOnTop }) {
     windowWidth > 900 ? { ...imageBackground, ...post.style } : imageBackground;
 
   return (
-    <a className="masonry-post overlay" style={style} href={post.link}>
+    <a
+      className="masonry-post overlay"
+      style={style}
+      href={post.link}
+      target="_blank"
+    >
       <div
         className="image-text"
         style={{ justifyContent: tagsOnTop ? "space-between" : "flex-end" }}

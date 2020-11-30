@@ -27,9 +27,9 @@ export default function PostGrid({ posts }) {
     <section className="grid-pagination-container">
       <section className="post-grid container">
         {paginatedPosts.map((post, index) => (
-          <div className="post-container">
+          <div className="post-container" key={index}>
             <figure>
-              <Link to={post.link}>
+              <Link to={{ pathname: post.link }} target="_blank">
                 <img src={post.image} alt={post.title} />
               </Link>
             </figure>
@@ -43,7 +43,9 @@ export default function PostGrid({ posts }) {
               <span>- {post.date}</span>
             </p>
             <p className="description-text">{post.description}</p>
-            <Link to={post.link}>Read mode ...</Link>
+            <Link to={{ pathname: post.link }} target="_blank">
+              Read mode ...
+            </Link>
           </div>
         ))}
       </section>
