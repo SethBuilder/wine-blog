@@ -59,22 +59,28 @@ const posts = [
     image: "https://slickdeals.net/images/avatar/sd/new/sd-facebook-5-2.png",
   },
   {
-    title: "Cheap White Wine For Cooking",
+    title: "WHITE WINE LENTILS WITH MUSTAR...",
     link:
-      "https://www.chowhound.com/post/cheap-white-wine-cooking-1095150?commentId=10299263#10299263",
+      "https://thefirstmess.com/2020/11/04/white-wine-lentils-with-mustard-thyme/",
     date: "2020-11-13",
     categories: ["White Wine", "Dry Taste"],
     image:
-      "https://chowhound3.cbsistatic.com/s/og_image_default-a17ab5029ec2cce14c046d8cd426a354.jpg",
+      "https://thefirstmess.com/wp-content/uploads/2020/11/White-wine-French-lentils-with-mustard-3.jpg",
   },
   {
-    title: "Cheap White Wine For Cooking",
+    title: '"It was a victory celebration ...',
     link:
-      "https://www.chowhound.com/post/cheap-white-wine-cooking-1095150?commentId=10299194#10299194",
-    date: "2020-11-13",
+      "https://www.fark.com/comments/11010849/It-was-a-victory-celebration-without-a-victory-Empty-wine-glasses-littered-a-table-in-East-Room-of-White-House-Pizza-boxes-cans-of-White-Claw-hard-seltzer-abounded-elsewhere-in-complex",
     categories: ["White Wine", "Dry Taste"],
     image:
-      "https://chowhound3.cbsistatic.com/s/og_image_default-a17ab5029ec2cce14c046d8cd426a354.jpg",
+      "https://fark-usrimg-full.nyc3.digitaloceanspaces.com/C/Cw/fark_CwhT9qVSaZ-wJzen30AHP9CdLMg.jpg?AWSAccessKeyId=HBAYEKZHGUB4NAYQBVSQ&Expires=1604898000&Signature=wXdX3av3U%2FYgD73XCYcmV2WFtcE%3D",
+    date: "2020-11-13",
+    title: '"It was a victory celebration ...',
+    link:
+      "https://www.fark.com/comments/11010849/It-was-a-victory-celebration-without-a-victory-Empty-wine-glasses-littered-a-table-in-East-Room-of-White-House-Pizza-boxes-cans-of-White-Claw-hard-seltzer-abounded-elsewhere-in-complex",
+    categories: ["White Wine", "Dry Taste"],
+    image:
+      "https://fark-usrimg-full.nyc3.digitaloceanspaces.com/C/Cw/fark_CwhT9qVSaZ-wJzen30AHP9CdLMg.jpg?AWSAccessKeyId=HBAYEKZHGUB4NAYQBVSQ&Expires=1604898000&Signature=wXdX3av3U%2FYgD73XCYcmV2WFtcE%3D",
   },
   {
     title: "Cheap White Wine For Cooking",
@@ -119,7 +125,7 @@ const posts = [
     date: "2020-11-14",
     categories: ["White Wine", "Dry Taste"],
     image:
-      "https://chowhound3.cbsistatic.com/s/og_image_default-a17ab5029ec2cce14c046d8cd426a354.jpg",
+      "https://www.wineturtle.com/wp-content/uploads/2016/08/Best-White-Wines-For-Cooking.png",
   },
   {
     title: "Cheap White Wine For Cooking",
@@ -309,4 +315,6 @@ const posts = [
       "https://drinkhacker.com/wp-content/uploads/2020/11/Alma_Rosa-PinotNoir-ElJabali-201868.png",
   },
 ];
-export default posts;
+export default posts.sort((a, b) => {
+  return new Date(Date.parse(b.date)) - new Date(Date.parse(a.date));
+});

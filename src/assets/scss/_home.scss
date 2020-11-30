@@ -1,12 +1,17 @@
 .home {
+    padding: 2em 0;
     h1 {
         width: 100%;
         color: $text-color;
-        margin: 5% 0 2% 0;
-        font-size: 26px;
+        padding: 1em 0;
+        font-size: 24px;
     }
     .featured-posts-container {
         display: flex;
+    }
+
+    .bg-white {
+        background: white;
     }
 }
 
