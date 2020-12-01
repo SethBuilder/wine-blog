@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0482e01d.chunk.css",
+    "main.js": "/static/js/main.ded9cb01.chunk.js",
+    "main.js.map": "/static/js/main.ded9cb01.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.de4ce1bb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.de4ce1bb.js.map",
+    "static/css/2.7cc3ab47.chunk.css": "/static/css/2.7cc3ab47.chunk.css",
+    "static/js/2.60788127.chunk.js": "/static/js/2.60788127.chunk.js",
+    "static/js/2.60788127.chunk.js.map": "/static/js/2.60788127.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.7cc3ab47.chunk.css.map": "/static/css/2.7cc3ab47.chunk.css.map",
+    "static/css/main.0482e01d.chunk.css.map": "/static/css/main.0482e01d.chunk.css.map",
+    "static/js/2.60788127.chunk.js.LICENSE.txt": "/static/js/2.60788127.chunk.js.LICENSE.txt",
+    "static/media/ionicons-v4.css": "/static/media/ionicons.bf69b013.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de4ce1bb.js",
+    "static/css/2.7cc3ab47.chunk.css",
+    "static/js/2.60788127.chunk.js",
+    "static/css/main.0482e01d.chunk.css",
+    "static/js/main.ded9cb01.chunk.js"
+  ]
+}

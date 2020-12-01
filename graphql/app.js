@@ -1,6 +1,5 @@
 const koa = require("koa");
-const send = require("koa-send");
-const Router = require("@koa/router");
+const serve = require("koa-static");
 const { ApolloServer } = require("apollo-server-koa");
 const { makeExecutableSchema } = require("graphql-tools");
 const { resolvers, typeDefs } = require("./schemas");
@@ -13,13 +12,12 @@ const server = new ApolloServer({
 });
 
 const app = new koa();
+const dist = path.join(__dirname, "/public");
+
 server.applyMiddleware({ app });
 
-app.use(async (ctx) => {
-  await send(ctx, ctx.path, { root: __dirname + "/public/index.html" });
-});
-
 const PORT = process.env.PORT || 4000;
+app.use(serve(dist));
 app.listen({ port: PORT }, () => {
   // fetchPosts();// to populate mock data
   console.log(

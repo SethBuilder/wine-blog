@@ -4,7 +4,7 @@
   "description": "a Koa and graphql backend for a raect blog",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "start": "node app"
   },
   "author": "Seif Elmughrabi",
   "license": "ISC",
@@ -16,7 +16,9 @@
     "koa": "^2.13.0",
     "koa-router": "^10.0.0",
     "koa-send": "^5.0.1",
+    "koa-sendfile": "^3.0.0",
     "koa-static": "^5.0.0",
+    "moment": "^2.29.1",
     "node-fetch": "^2.6.1"
   }
 }
